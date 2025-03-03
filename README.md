@@ -55,8 +55,8 @@ graph LR
 - The cells with the value 'X' are blocked cells
 
 **Traversal**
-- [Matrix - BFS (Breadth-First Search) Traversal](./src/matrix_bfs.js)
-- [Matrix - DFS (Depth-First Search) Traversal](./src/matrix_dfs.js)
+- [Matrix - BFS (Breadth-First Search) Traversal](./src/matrix_bfs.py)
+- [Matrix - DFS (Depth-First Search) Traversal](./src/matrix_dfs.py)
 
 
 ## References
