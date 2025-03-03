@@ -1,7 +1,7 @@
 from collections import deque
 
 # Define possible movements: up, right, down, left
-DIRECTIONS = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]
 
 
 def bfs_maze(maze, start_pos, end_pos):

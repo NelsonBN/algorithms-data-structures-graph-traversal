@@ -56,7 +56,6 @@ graph LR
 
 **Traversal**
 - [Matrix - BFS (Breadth-First Search) Traversal](./src/matrix_bfs.py)
-- [Matrix - DFS (Depth-First Search) Traversal](./src/matrix_dfs.py)
 
 
 ## References
