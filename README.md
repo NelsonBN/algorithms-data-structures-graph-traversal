@@ -55,8 +55,8 @@ graph LR
 - The cells with the value 'X' are blocked cells
 
 **Traversal**
-- [Matrix - BFS (Breadth-First Search) Traversal](./src/maze-bfs.js)
-- [Matrix - DFS (Depth-First Search) Traversal](./src/maze-dfs.js)
+- [Matrix - BFS (Breadth-First Search) Traversal](./src/matrix_bfs.js)
+- [Matrix - DFS (Depth-First Search) Traversal](./src/matrix_dfs.js)
 
 
 ## References
