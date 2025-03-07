@@ -1,19 +1,17 @@
-from collections import deque
-
 # Define possible movements: up, right, down, left
 DIRECTIONS = [(0, -1), (1, 0), (0, 1), (-1, 0)]
 
 
-def bfs_maze(maze, start_pos, end_pos):
-    # Initialize queue with start position
-    queue = deque([start_pos])
+def dfs_maze(maze, start_pos, end_pos):
+    # Initialize stack with start position
+    stack = [start_pos]
 
     # Keep track of visited cells and their previous cell for path reconstruction
     visited = {start_pos: None}
 
-    while queue:
-        # BFS uses FIFO - First In, First Out
-        current = queue.popleft()
+    while stack:
+        # Pop the last element (DFS uses LIFO - Last In, First Out)
+        current = stack.pop()
 
         # If we reached the end
         if current == end_pos:
@@ -23,8 +21,8 @@ def bfs_maze(maze, start_pos, end_pos):
 
         # Try all four directions
         for dx, dy in DIRECTIONS:
-            move_x = x + dx
-            move_y = y + dy
+            move_x = x + dy
+            move_y = y + dx
 
             # Check if the new position is valid
             if (0 <= move_y < len(maze) and
@@ -32,7 +30,7 @@ def bfs_maze(maze, start_pos, end_pos):
                 maze[move_y][move_x] != 'X' and
                 (move_x, move_y) not in visited):
 
-                queue.append((move_x, move_y))
+                stack.append((move_x, move_y))
                 visited[(move_x, move_y)] = current
 
     # Reconstruct path if end was reached
@@ -43,9 +41,9 @@ def bfs_maze(maze, start_pos, end_pos):
             path.append(current)
             current = visited[current]
         path.append(start_pos)
-        return path[::-1] # Reverse to get path from start to end
+        return path[::-1]  # Reverse to get path from start to end
 
-    return None # No path found
+    return None  # No path found
 
 
 maze = [
@@ -58,9 +56,8 @@ print("Original Maze:")
 for x in maze:
     print(x)
 
-# Find path using BFS
-path = bfs_maze(maze, (0, 1), (4, 1))
-
+# Find path using DFS
+path = dfs_maze(maze, (0, 1), (4, 1))
 
 print("Path found:", path)
 print("Path length:", len(path))
